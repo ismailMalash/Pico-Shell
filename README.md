@@ -1,7 +1,8 @@
-```markdown
-# Pico Shell
 
-This project implements a simple shell program (Pico Shell) in C. It supports basic shell functionalities such as built-in commands (`echo`, `pwd`, `cd`, `exit`), command execution via `fork()` and `execvp()`, and dynamic argument handling (with a maximum of 5 arguments per command). The shell can execute commands either by their full paths or just by their names (if available in the system's PATH).
+```markdown
+# Pico Shell - System Programming Assignment
+
+This project implements a simple shell program (Pico Shell) in C. It supports basic shell functionalities such as built-in commands (`echo`, `pwd`, `cd`, `exit`), command execution via `fork()` and `execvp()`, and dynamic argument handling (with a maximum of 5 arguments per command). The shell can execute commands either by their full paths or just by their names (if available in the system's `PATH`).
 
 ## Features
 
@@ -12,7 +13,7 @@ This project implements a simple shell program (Pico Shell) in C. It supports ba
   - `exit`: Exits the Pico shell.
 
 - **Command Execution:**
-  - External commands can be executed by specifying their name (no need for full path).
+  - External commands can be executed by specifying their name (no need for the full path).
   - The program uses `fork()` to create child processes and `execvp()` to replace the child process with the specified command.
 
 - **Command Line Parsing:**
@@ -25,6 +26,12 @@ This project implements a simple shell program (Pico Shell) in C. It supports ba
 - **Dynamic Memory Allocation:**
   - Memory is dynamically allocated for the input buffer and arguments to handle varying input sizes and avoid memory leaks.
 
+## Requirements
+
+- A C compiler (e.g., GCC) that supports C99.
+- Linux-based operating system (tested on Ubuntu 20.04).
+- The `man` pages for `execvp` and `chdir` (for reference).
+
 ## Compilation
 
 To compile the Pico Shell, run the following command:
@@ -33,7 +40,7 @@ To compile the Pico Shell, run the following command:
 gcc -o myPicoShell myPicoShell.c
 ```
 
-This will generate the executable `PicoShell` from the source file `pico_shell.c`.
+This will generate the executable `myPicoShell` from the source file `myPicoShell.c`.
 
 ## Running the Shell
 
@@ -51,39 +58,39 @@ ismail's_Pico_Shell$
 
 You can then enter commands like `echo`, `pwd`, `cd <directory>`, or `exit`.
 
-### Example Usage:
+## Example Usage
 
-1. **Echo command:**
+### 1. **Echo command:**
    ```bash
    ismail's_Pico_Shell$ echo Hello, World!
    Hello, World!
    ```
 
-2. **Print working directory:**
+### 2. **Print working directory:**
    ```bash
    ismail's_Pico_Shell$ pwd
    /home/ismail-malash/Desktop/SysProgInLinux
    ```
 
-3. **Change directory:**
+### 3. **Change directory:**
    ```bash
    ismail's_Pico_Shell$ cd ../../Documents
    ismail's_Pico_Shell$ pwd
    /home/ismail-malash/Desktop/Documents
    ```
 
-4. **External command execution:**
+### 4. **External command execution:**
    ```bash
-ismail's_Pico_Shell$ ls -l -a
-total 140
-drwxrwxr-x 3 ismail-malash ismail-malash  4096 Mar 18 08:15 .
-drwxr-xr-x 7 ismail-malash ismail-malash  4096 Mar 15 00:50 ..
-drwxrwxr-x 8 ismail-malash ismail-malash  4096 Mar  9 06:44 .git
--rwxrwxr-x 1 ismail-malash ismail-malash 16720 Mar 18 08:15 myPicoShell
--rw-rw-r-- 1 ismail-malash ismail-malash  1822 Mar 18 08:15 myPicoShell.c
+   ismail's_Pico_Shell$ ls -l -a
+   total 140
+   drwxrwxr-x 3 ismail-malash ismail-malash  4096 Mar 18 08:15 .
+   drwxr-xr-x 7 ismail-malash ismail-malash  4096 Mar 15 00:50 ..
+   drwxrwxr-x 8 ismail-malash ismail-malash  4096 Mar  9 06:44 .git
+   -rwxrwxr-x 1 ismail-malash ismail-malash 16720 Mar 18 08:15 myPicoShell
+   -rw-rw-r-- 1 ismail-malash ismail-malash  1822 Mar 18 08:15 myPicoShell.c
    ```
 
-5. **Exit the shell:**
+### 5. **Exit the shell:**
    ```bash
    ismail's_Pico_Shell$ exit
    ```
@@ -104,3 +111,6 @@ The Pico Shell program is structured as follows:
 - **Argument Handling:**
   - The shell supports a maximum of 5 arguments per command. The arguments are parsed and stored in an array, and the array is passed to `execvp()` to execute the command.
   - Any additional arguments beyond the maximum number are ignored.
+
+
+

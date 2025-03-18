@@ -1,5 +1,5 @@
 
-# Pico Shell - System Programming Assignment
+# Pico Shell 
 
 This project implements a simple shell program (Pico Shell) in C. It supports basic shell functionalities such as built-in commands (`echo`, `pwd`, `cd`, `exit`), command execution via `fork()` and `execvp()`, and dynamic argument handling (with a maximum of 5 arguments per command). The shell can execute commands either by their full paths or just by their names (if available in the system's `PATH`).
 

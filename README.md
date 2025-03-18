@@ -1,5 +1,4 @@
 
-```markdown
 # Pico Shell - System Programming Assignment
 
 This project implements a simple shell program (Pico Shell) in C. It supports basic shell functionalities such as built-in commands (`echo`, `pwd`, `cd`, `exit`), command execution via `fork()` and `execvp()`, and dynamic argument handling (with a maximum of 5 arguments per command). The shell can execute commands either by their full paths or just by their names (if available in the system's `PATH`).
@@ -19,10 +18,10 @@ This project implements a simple shell program (Pico Shell) in C. It supports ba
 - **Command Line Parsing:**
   - Supports parsing the command line and handling up to 5 arguments separated by spaces.
   - Dynamically allocates memory for argument parsing and ensures there are no memory leaks.
-  
+
 - **Argument Handling:**
   - The shell supports up to 5 arguments for each command. If more than 5 arguments are provided, they will be ignored.
-  
+
 - **Dynamic Memory Allocation:**
   - Memory is dynamically allocated for the input buffer and arguments to handle varying input sizes and avoid memory leaks.
 
@@ -39,8 +38,6 @@ To compile the Pico Shell, run the following command:
 ```bash
 gcc -o myPicoShell myPicoShell.c
 ```
-
-This will generate the executable `myPicoShell` from the source file `myPicoShell.c`.
 
 ## Running the Shell
 
